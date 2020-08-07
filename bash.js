@@ -1,13 +1,16 @@
 let pwd = require('./pwd.js');
 let ls = require('./ls.js');
+let cat = require('./cat.js');
+let curl = require('./curl.js');
 
 process.stdout.write('prompt > ');
 
 process.stdin.on('data', (data) => {
-	const cmd = data.toString().trim();
+	const userInput = data.toString().trim();
 
-	pwd(cmd);
-	ls(cmd);
-
+	pwd(userInput);
+	ls(userInput);
+	cat(userInput);
+	curl(userInput);
 	process.stdout.write('\nprompt > ');
-})
+});
