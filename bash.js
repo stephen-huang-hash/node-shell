@@ -5,6 +5,10 @@ let curl = require('./curl.js');
 
 process.stdout.write('prompt > ');
 
+function done(output) {
+
+}
+
 process.stdin.on('data', (data) => {
 	const userInput = data.toString().trim();
 
@@ -12,5 +16,6 @@ process.stdin.on('data', (data) => {
 	ls(userInput);
 	cat(userInput);
 	curl(userInput);
+
 	process.stdout.write('\nprompt > ');
 });
